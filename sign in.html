@@ -11,7 +11,6 @@
             body{
      margin: 0%;
      padding: 1%;
-
      background-image: url(images/final.jpg);
      background-size: cover;
   background-position: center; 
@@ -45,27 +44,133 @@
           ul.topnav li {float: none;}
         }
 
-        .container{
-          color: antiquewhite;
-          text-align: center;
-          display: block;
-        }
-        .container h1 {
-          font-size: 75px;
-          color: rgb(10, 9, 9);
-        }
-        .container p{
-          color: rgb(24, 24, 22);
-          font-size: 30px;
-        }
-        .container ul{
-          color: rgb(0, 0, 0);
-          font-size: 35px;
-          font-style: italic;
-        }
+        .container {
+    color: antiquewhite;
+    text-align: center;
+    display: block;
+}
+
+.container h1 {
+    font-size: 75px;
+    color: rgb(10, 9, 9);
+}
+
+.container p {
+    color: rgb(24, 24, 22);
+    font-size: 30px;
+}
+
+.container ul {
+    color: rgb(38, 12, 103);
+    font-size: 35px;
+    font-style: italic;
+}
+
+.containerform {
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 600px;
+}
+.form-control {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 3px solid #1d788a;
+    border-radius: 10px;
+    box-sizing: border-box; 
+    font-size: 1.1em;
+}
+
+.form-label {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.category-label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.category-options {
+    display: flex;
+    flex-direction: column;
+}
+
+.category-option {
+    margin-bottom: 5px;
+}
+
+.category-option input[type="radio"] {
+    display: none;
+}
+
+.category-option label {
+    display: inline-block;
+    padding: 10px;
+    background-color: #778b83;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.category-option input[type="radio"]:checked + label {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.star-rating {
+    display: flex;
+}
+
+.star-rating input[type="radio"] {
+    display: none;
+}
+
+.star-rating label {
+    cursor: pointer;
+    font-size: 24px;
+    color: #78814e;
+    margin-right: 5px;
+}
+
+.star-rating label:hover,
+.star-rating input[type="radio"]:checked ~ label {
+    color: #FFD700; 
+  }
 
 
+.star {
+    color: #ac9323;
+    font-size: 30px;
+}
 
+.star i {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.star i:hover {
+    color: #fef100;
+}
+
+.btn-submit {
+    background-color: #309d34;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 1.2em;
+    transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #0bc314;
+}
         
         </style>
 </head>
@@ -79,72 +184,64 @@
           <a href="sign in.html">Sign In</a></li> 
       </ul> 
       
-      <div class="container" style="background-image: url(images/foodbg.jpg);">
-        <p style="font-size: xx-large;">
-            <h1 style="color: rgb(10, 191, 46);" ><b>
-              Review US       
-            </b></h1></p>
-            
-       </div>
+  
+<div class="container" style="background-image: url(images/foodbg.jpg);">
+  <h1 style="color: rgb(10, 191, 46);"><b>Review Us</b></h1>
+</div>
 
-       <center>
-       <form class="containerform">
-        <div class="row mb-3">
-          <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-          <div class="col-sm-10">
-            <input type="email" class="form-control" id="inputEmail3">
+<div class="containerform">
+  <form>
+    <div class="mb-3">
+      <label for="inputEmail" class="form-label">Email</label>
+      <input type="email" class="form-control" id="inputEmail" placeholder="Abc@gmail.com">
+  </div>
+  <div class="mb-3">
+      <label for="inputPassword" class="form-label">Password</label>
+      <input type="password" class="form-control" id="inputPassword" placeholder="*****">
+  </div>
+  
+      <div class="mb-3">
+        <fieldset class="mb-3">
+          <legend class="category-label">Category</legend>
+          <div class="category-options">
+              <div class="category-option">
+                  <input class="form-check-input" type="radio" name="category" id="desiFood" value="desiFood" checked>
+                  <label class="form-check-label" for="desiFood">Desi Food <i class="fa fa-cutlery" aria-hidden="true"></i></label>
+              </div>
+              <div class="category-option">
+                  <input class="form-check-input" type="radio" name="category" id="fastFood" value="fastFood">
+                  <label class="form-check-label" for="fastFood">Fast Food <i class="fa fa-cutlery" aria-hidden="true"></i></label>
+              </div>
+              <div class="category-option">
+                  <input class="form-check-input" type="radio" name="category" id="italianFood" value="italianFood">
+                  <label class="form-check-label" for="italianFood">Italian Food <i class="fa fa-cutlery" aria-hidden="true"></i></label>
+              </div>
+              <div class="category-option">
+                  <input class="form-check-input" type="radio" name="category" id="chineseFood" value="chineseFood">
+                  <label class="form-check-label" for="chineseFood">Chinese Food <i class="fa fa-cutlery" aria-hidden="true"></i></label>
+              </div>
           </div>
-        </div>
-        <div class="row mb-3">
-          <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-          <div class="col-sm-10">
-            <input type="password" class="form-control" id="inputPassword3">
-          </div>
-        </div>
-        <fieldset class="row mb-3">
-          <legend class="col-form-label col-sm-2 pt-0" style="color: #146939;"><b style="font-size: 30px;"> CATEGORY</b></legend>
-          <div class="col-sm-10">
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-              <label class="form-check-label" for="gridRadios1">
-                Desi Food <i class="fa fa-cutlery" aria-hidden="true"></i>
+      </fieldset>
+      
+      </div>
+      <label for="message" class="form-label">Review:</label>
+<div class="star-rating">
+    <input type="radio" id="star5" name="rating" value="5">
+    <label for="star5"><i class="fa fa-star"></i></label>
+    <input type="radio" id="star4" name="rating" value="4">
+    <label for="star4"><i class="fa fa-star"></i></label>
+    <input type="radio" id="star3" name="rating" value="3">
+    <label for="star3"><i class="fa fa-star"></i></label>
+    <input type="radio" id="star2" name="rating" value="2">
+    <label for="star2"><i class="fa fa-star"></i></label>
+    <input type="radio" id="star1" name="rating" value="1">
+    <label for="star1"><i class="fa fa-star"></i></label>
+</div>
+<textarea id="message" class="form-control" placeholder="Tell us about your experience" rows="5" cols="60"></textarea>
 
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-              <label class="form-check-label" for="gridRadios2">
-                Fast Food <i class="fa fa-cutlery" aria-hidden="true"></i>
-
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-              <label class="form-check-label" for="gridRadios2">
-                Italian Food <i class="fa fa-cutlery" aria-hidden="true"></i>
-
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-              <label class="form-check-label" for="gridRadios2">
-                Chinese Food <i class="fa fa-cutlery" aria-hidden="true"></i>
-
-              </label>
-            </div>
-          </div>
-        </fieldset>
-    
-        <label for="message" >Review:</label> 
-        <div class="star" style="padding-left: 10px;">
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star" aria-hidden="true"></i> </div>
-        <br>
-        <textarea id="message" placeholder="tell us about your experience" rows="5" cols="60"></textarea> <br> 
-        <button type="submit" class="btn btn-primary" style="background-color: rgb(172, 71, 71);" style="padding-top: 25%;">Submit</button>
-      </form>
-    </center>
+      <button type="submit" class="btn-submit">Submit</button>
+  </form>
+</div>
 
 </body>
 </html>
